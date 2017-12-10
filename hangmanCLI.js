@@ -10,7 +10,11 @@ var tempWord;
 
 //starts and resets the game
 function initializeGame(){
-    tempWord = generateWord();
+    console.log('\nWelcome to Hangman-CLI. It plays exactly as hangman should.')
+    console.log('Seven incorrect guesses, and you lose. Be sure to keep caps lock OFF\n')
+
+    var word = new Word()
+    console.log('The word is: '+word.word)
     askLetter();
 
 }
@@ -22,8 +26,12 @@ function askLetter(){
         message: "Pick a letter."
     }]).then(function(response){
 
-        console.log('You have chosen letter, '+response)
-        console.log(response.letter)
+        //logic for accept and processing letter, or rejection
+        var letter = new Letter(response);
+        
+        var isValid = letter.isValid();
+        console.log('You have chosen letter, '+letter.letter);
+        console.log(isValid);
     })
 
 }
@@ -33,7 +41,7 @@ function askLetter(){
 function generateWord(){
 
     var chosenWord;
-    var wordArr = ['arm','back','ears','eyes','face','feet','stomach','teeth','thumbs','toes','tongue','tooth','fingers','foot','hair','hands','head','knees','legs','mouth','neck','nose','shoulders','skin'];
+    
 
     //return chosenWord;
 
@@ -42,3 +50,5 @@ function generateWord(){
 
 
 initializeGame();
+
+

@@ -1,11 +1,30 @@
 var inquirer = require('inquirer');
 var prompt = require('prompt');
+var Word = require('./word.js')
+var Letter = require('./letter.js')
+
+
+var tempWord;
 
 
 
 //starts and resets the game
 function initializeGame(){
+    tempWord = generateWord();
+    askLetter();
 
+}
+
+function askLetter(){
+    inquirer.prompt([{
+        name:'letter',
+        type:'input',
+        message: "Pick a letter."
+    }]).then(function(response){
+
+        console.log('You have chosen letter, '+response)
+        console.log(response.letter)
+    })
 
 }
 
@@ -19,3 +38,7 @@ function generateWord(){
     //return chosenWord;
 
 }
+
+
+
+initializeGame();

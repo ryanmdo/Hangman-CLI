@@ -6,3 +6,7 @@ function Letter(ltr){
 
 
 }
+
+
+
+module.exports =  Letter;

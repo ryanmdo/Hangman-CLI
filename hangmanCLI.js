@@ -4,8 +4,6 @@ var Word = require('./word.js')
 var Letter = require('./letter.js')
 
 
-var tempWord;
-
 
 
 //starts and resets the game
@@ -14,7 +12,6 @@ function initializeGame(){
     console.log('Seven incorrect guesses, and you lose. Be sure to keep caps lock OFF\n')
 
     var word = new Word()
-    console.log('The word is: '+word.word)
     askLetter();
 
 }
@@ -31,6 +28,7 @@ function askLetter(){
         
         var isValid = letter.isValid();
         console.log('You have chosen letter, '+letter.letter);
+        letter.printValidLetters();
         console.log(isValid);
     })
 

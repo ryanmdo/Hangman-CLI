@@ -5,7 +5,7 @@
 //this constructer primarily acts like a filter for non-valid letters and a store for the chosen letter
 function Letter(ltr){
     this.letter = ltr.letter;
-    this.letterBank = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    this.validLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
     //console.log(ltr.letter)
 
 
@@ -13,13 +13,20 @@ function Letter(ltr){
 }
 
 
+function printValidLetters(){
+    var stringedLetters = '';
+    for (var i=0;i<this.validLetters.length;i++){
+        stringedLetters += this.validLetters[i];
+    }
+    console.log(stringedLetters)
+}
+
+
 //checks to ensure that a lowercase letter than has not been selected gets used
 Letter.prototype.isValid = function(){
-    
-    validLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
     for (var i=0;i <validLetters.length;i++){
-        if(validLetters[i]===this.letter){
+        if(this.validLetters[i]===this.letter){
             return true
         }
     }

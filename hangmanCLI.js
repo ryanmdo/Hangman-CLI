@@ -6,6 +6,7 @@ var Letter = require('./letter.js')
 
 
 
+
 //starts and resets the game
 function initializeGame(){
     console.log('\nWelcome to Hangman-CLI. It plays exactly as hangman should.')
@@ -47,6 +48,5 @@ function generateWord(){
 
 
 
+
 initializeGame();
-
-

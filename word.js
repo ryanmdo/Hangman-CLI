@@ -8,6 +8,9 @@ function Word(){
     console.log('The random word is '+this.word)
 
 
+    
+
+
 }
 
 

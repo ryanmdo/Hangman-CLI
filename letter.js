@@ -6,7 +6,7 @@
 function Letter(ltr){
     this.letter = ltr.letter;
     this.remainingLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-    this.incorrectLetters = [];
+    this.incorrectLetters = ['k'];
     this.correctLetters = [];
 
 
@@ -14,6 +14,21 @@ function Letter(ltr){
 }
 
 
+
+//is checked after every turn to see if the game is solved
+Letter.prototype.isSolved = function(){
+    
+
+}
+
+
+
+//takes in the word from hangman.js and then calls updates the correct letters
+Letter.prototype.getWord = function(word){
+    console.log('recieved the word: '+ word)
+
+
+}
 
 
 Letter.prototype.printRemainingLetters = function(){

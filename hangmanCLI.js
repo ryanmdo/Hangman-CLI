@@ -5,7 +5,6 @@ var Letter = require('./letter.js')
 
 
 var word = new Word();
-var letter;
 
 
 
@@ -32,9 +31,9 @@ function askLetter(){
         name:'letter',
         type:'input',
         message: "Pick a letter."
-    }]).then(function(response){
+    }]).then(answer =>{
         console.log('accepted')
-        letter = new Letter(response);
+        var letter = new Letter(answer);
         //logic for accept and processing letter, or rejection
         
         
@@ -60,7 +59,6 @@ function isWinOrLoss(){
     }
 
 }
-
 
 //generate word, using the same word bank from the first hangman game
 
